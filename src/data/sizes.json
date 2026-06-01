@@ -1,0 +1,109 @@
+[
+  {
+    "size": 10,
+    "name": "10 Yard Dumpster",
+    "slug": "10-yard",
+    "available": true,
+    "dimensions": "12 ft L × 8 ft W × 3.5 ft H",
+    "holds": "About 4 pickup truck loads",
+    "truckLoads": 4,
+    "bestFor": [
+      "small bathroom remodels",
+      "single-room cleanouts",
+      "small deck removals",
+      "garage partial cleanouts",
+      "heavy debris like concrete or brick"
+    ],
+    "notGoodFor": [
+      "whole-house cleanouts",
+      "large roofing jobs",
+      "multi-room renovations"
+    ],
+    "weightLimit": "1–2 tons typical",
+    "popular": false
+  },
+  {
+    "size": 15,
+    "name": "15 Yard Dumpster",
+    "slug": "15-yard",
+    "available": false,
+    "dimensions": "16 ft L × 8 ft W × 4 ft H",
+    "holds": "About 6 pickup truck loads",
+    "truckLoads": 6,
+    "bestFor": [
+      "medium cleanouts",
+      "small remodels",
+      "yard waste"
+    ],
+    "notGoodFor": [
+      "heavy concrete or brick loads",
+      "large roofing jobs"
+    ],
+    "weightLimit": "2–3 tons typical",
+    "popular": false
+  },
+  {
+    "size": 20,
+    "name": "20 Yard Dumpster",
+    "slug": "20-yard",
+    "available": true,
+    "dimensions": "22 ft L × 8 ft W × 4.5 ft H",
+    "holds": "About 8 pickup truck loads",
+    "truckLoads": 8,
+    "bestFor": [
+      "medium kitchen or bathroom remodels",
+      "large garage cleanouts",
+      "flooring removal",
+      "window and door replacement projects",
+      "small roofing jobs"
+    ],
+    "notGoodFor": [
+      "heavy concrete or brick-only loads",
+      "single-room cleanouts"
+    ],
+    "weightLimit": "3–4 tons typical",
+    "popular": true
+  },
+  {
+    "size": 30,
+    "name": "30 Yard Dumpster",
+    "slug": "30-yard",
+    "available": true,
+    "dimensions": "22 ft L × 8 ft W × 6 ft H",
+    "holds": "About 12 pickup truck loads",
+    "truckLoads": 12,
+    "bestFor": [
+      "whole-house cleanouts",
+      "large roofing tear-offs",
+      "major renovation or gut rehab",
+      "new construction site cleanup",
+      "commercial build-outs"
+    ],
+    "notGoodFor": [
+      "tight urban driveways or alleys",
+      "light residential cleanouts — 20-yard is more cost-effective"
+    ],
+    "weightLimit": "4–5 tons typical",
+    "popular": false
+  },
+  {
+    "size": 40,
+    "name": "40 Yard Dumpster",
+    "slug": "40-yard",
+    "available": false,
+    "dimensions": "22 ft L × 8 ft W × 8 ft H",
+    "holds": "About 16 pickup truck loads",
+    "truckLoads": 16,
+    "bestFor": [
+      "large commercial demolition",
+      "industrial cleanouts",
+      "major construction projects"
+    ],
+    "notGoodFor": [
+      "residential driveways",
+      "projects under 10 tons of debris"
+    ],
+    "weightLimit": "5–8 tons typical",
+    "popular": false
+  }
+]

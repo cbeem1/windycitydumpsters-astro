@@ -1,0 +1,105 @@
+[
+  {
+    "slug": "chicago-il",
+    "city": "Chicago",
+    "state": "Illinois",
+    "stateAbbr": "IL",
+    "county": "Cook",
+    "population": 2696000,
+    "phone": "(224) 725-3311",
+    "serviceArea": [
+      "Chicago",
+      "Near North Side",
+      "Lincoln Park",
+      "Wicker Park",
+      "Hyde Park",
+      "Logan Square",
+      "Pilsen",
+      "Bridgeport"
+    ],
+    "permitInfo": "Any dumpster placed on a public street or sidewalk in Chicago requires a permit from the Chicago Department of Transportation (CDOT). Apply through the City of Chicago Inspection, Permitting & Licensing portal at ipi.cityofchicago.org. CDOT offers 3-day and 30-day permit durations. Applicants must provide proof of liability insurance of at least $1,000,000 naming the City of Chicago as additional insured, plus a $5,000 letter of credit. Permit fees vary by location — dumpsters in the Central Business District carry a higher fee. We handle permit applications on your behalf for street placements.",
+    "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910). Accepts C&D debris including wood, concrete, drywall, shingles, brick, and metal. Mon–Fri 6am–5pm, Sat 7am–12pm. Also: LRS Chicago Transfer Station on the Southwest Side accepts C&D, concrete, roofing, and yard waste — call LRS at 773-579-1200 for current hours.",
+    "priceRange": {
+      "10": "$299–$419",
+      "20": "$369–$519",
+      "30": "$439–$619"
+    },
+    "commonUses": [
+      "garage cleanouts",
+      "kitchen remodels",
+      "roof tear-offs",
+      "estate cleanouts",
+      "basement gut-outs",
+      "greystone renovation debris"
+    ],
+    "localNote": "Chicago's dense urban neighborhoods often have alleys, which make rear placement possible and frequently eliminates the need for a street permit. However, two-flat and greystone gut remodels generate heavy plaster and masonry debris — Chicago's older building stock means your load will often run heavier than the national average, so weight overages are common on interior demo jobs. Budget accordingly.",
+    "tallyFormUrl": "https://tally.so/r/wMZkJo"
+  },
+  {
+    "slug": "naperville-il",
+    "city": "Naperville",
+    "state": "Illinois",
+    "stateAbbr": "IL",
+    "county": "DuPage",
+    "population": 149540,
+    "phone": "(224) 725-3311",
+    "serviceArea": [
+      "Naperville",
+      "Aurora",
+      "Lisle",
+      "Bolingbrook",
+      "Woodridge",
+      "Warrenville"
+    ],
+    "permitInfo": "Naperville requires a Right-of-Way (ROW) permit from the City of Naperville Public Works Department for any dumpster placed in a city-owned right-of-way (street, alley, parkway, or sidewalk). Apply through the City's Permits and Licenses portal at naperville.il.us or call (630) 420-6100. The permit application must include a site plan or aerial showing exact dumpster placement, rental dates, traffic control devices, and any sidewalk impacts. The City requests up to 14 calendar days for ROW permit review. Fees are typically $88 for non-excavation permits. Dumpsters placed entirely on private driveways or construction sites do not require a ROW permit.",
+    "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) — a LEED-certified C&D recycling and disposal facility serving DuPage County. For closer drop-off, LRS West Chicago Transfer Station (DuPage/Kane border area) also accepts C&D and construction debris; contact LRS at 630-377-7700. The City of Naperville's Household Hazardous Waste facility is at 156 Fort Hill Drive, open Saturdays and Sundays 9am–2pm (not for C&D debris).",
+    "priceRange": {
+      "10": "$325–$450",
+      "20": "$420–$550",
+      "30": "$500–$640"
+    },
+    "commonUses": [
+      "kitchen and bath remodels",
+      "basement finishing cleanouts",
+      "deck removal",
+      "garage cleanouts",
+      "landscaping debris",
+      "new construction site cleanup"
+    ],
+    "localNote": "Naperville is one of the fastest-growing cities in the Midwest, with a large volume of kitchen remodels, basement finishing, and deck tear-offs each spring. DuPage County's strict C&D documentation requirements mean dumpster rental companies must provide certified disposal receipts — reputable haulers do this automatically. Naperville driveways tend to be long and suburban, so most residential placements avoid the street and skip the ROW permit entirely.",
+    "tallyFormUrl": "https://tally.so/r/wMZkJo"
+  },
+  {
+    "slug": "evanston-il",
+    "city": "Evanston",
+    "state": "Illinois",
+    "stateAbbr": "IL",
+    "county": "Cook",
+    "population": 78110,
+    "phone": "(224) 725-3311",
+    "serviceArea": [
+      "Evanston",
+      "Skokie",
+      "Wilmette",
+      "Rogers Park",
+      "Lincolnwood"
+    ],
+    "permitInfo": "Evanston requires a Right-of-Way (ROW) permit from the Evanston Public Works Agency for any dumpster placed in a public right-of-way (street, alley, parkway, or sidewalk). Contact the Public Works Agency at 2100 Ridge Ave., Evanston, IL 60201, phone 847-448-4311 (or dial 3-1-1). Permit fees are $50 for the first week and $25 for each additional week. The dumpster must be clearly marked with the hauler's name and phone number and covered when not in use. Failure to obtain a permit carries a $500-per-day penalty. We handle all permit paperwork for street placements.",
+    "transferStation": "LRS Chicago Transfer Station (Southwest Chicago) accepts C&D and construction debris from North Shore clients — call 773-579-1200. Tri-State Disposal Transfer Station at 13903 S. Ashland Ave., Riverdale, IL 60827 is also an option for larger loads. For recycling, Evanston's Public Works drop-off is available for some materials at 2020 Asbury Ave.",
+    "priceRange": {
+      "10": "$340–$475",
+      "20": "$430–$560",
+      "30": "$520–$660"
+    },
+    "commonUses": [
+      "Victorian and bungalow gut remodels",
+      "kitchen and bathroom renovations",
+      "roof tear-offs",
+      "estate cleanouts",
+      "garage demolition",
+      "university move-out cleanouts"
+    ],
+    "localNote": "Evanston's historic housing stock — Victorian homes, brick two-flats, and large Craftsman bungalows built before 1940 — means remodel dumpsters frequently contain heavy plaster lathe, old-growth lumber, and brick. These materials weigh significantly more than modern drywall and framing, so 10-yard dumpsters are often the right call for a single-room gut. Northwestern University's campus also generates seasonal move-out volume each May and August.",
+    "tallyFormUrl": "https://tally.so/r/wMZkJo"
+  }
+]
