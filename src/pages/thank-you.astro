@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'We Got Your Request! | Windy City Dumpsters';
+const pageDescription = 'Thank you for reaching out to Windy City Dumpsters. We will call you back within 1 hour during business hours.';
+const phone = '(224) 725-3311';
+const phoneHref = 'tel:+12247253311';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+
+  <section class="min-h-[70vh] flex items-center justify-center py-16 px-4 bg-gray-50">
+    <div class="max-w-xl mx-auto text-center">
+
+      <!-- Checkmark icon -->
+      <div class="flex justify-center mb-6">
+        <div class="bg-green-100 rounded-full p-5">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-3xl md:text-4xl font-bold text-navy mb-4">
+        We Got Your Request!
+      </h1>
+
+      <!-- Message -->
+      <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+        Someone from Windy City Dumpsters will call you back within <strong>1 hour</strong> during business hours
+        <span class="whitespace-nowrap">(Mon–Sun, 7am–7pm).</span>
+      </p>
+
+      <!-- Click-to-Call Button -->
+      <a
+        href={phoneHref}
+        class="inline-flex items-center gap-3 bg-red text-white font-bold px-8 py-5 rounded-xl text-2xl shadow-lg hover:bg-red/90 transition-colors mb-8 w-full sm:w-auto justify-center"
+        aria-label="Call Windy City Dumpsters"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+        </svg>
+        {phone}
+      </a>
+
+      <p class="text-sm text-gray-500 mb-8">
+        Need your dumpster sooner? Call us directly and we can often arrange same-day delivery.
+      </p>
+
+      <!-- Back to home link -->
+      <a
+        href="/"
+        class="inline-flex items-center gap-2 text-navy font-semibold hover:text-red transition-colors text-sm"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        Back to Homepage
+      </a>
+
+    </div>
+  </section>
+
+</BaseLayout>
