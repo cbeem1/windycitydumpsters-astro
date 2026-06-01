@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import cities from '../../data/cities.json';
+
+const title = 'Dumpster Rental Service Areas | Windy City Dumpsters';
+const description = 'Windy City Dumpsters serves Chicago, Naperville, Evanston, and dozens of surrounding suburbs. Find local dumpster rental pricing, permit info, and same-day delivery options in your area.';
+const canonicalURL = 'https://windycitydumpsters.com/dumpster-rental/';
+---
+
+<BaseLayout title={title} description={description} canonicalURL={canonicalURL}>
+
+  <!-- Hero Banner -->
+  <section class="bg-navy text-white py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-4">Dumpster Rental Service Areas</h1>
+      <p class="text-lg md:text-xl text-white/85 max-w-2xl mx-auto">
+        Windy City Dumpsters delivers roll-off dumpsters throughout Chicago and the surrounding suburbs — including Naperville, Evanston, and 40+ additional communities across Cook and DuPage Counties.
+        Same-day and next-day delivery available. Call <a href="tel:+12247253311" class="text-red font-bold hover:underline">(224) 725-3311</a> or select your city below to get pricing.
+      </p>
+    </div>
+  </section>
+
+  <!-- City Cards Grid -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold text-navy mb-8 text-center">Choose Your City</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {cities.map((city) => (
+        <a
+          href={`/dumpster-rental/${city.slug}/`}
+          class="group block bg-white border-2 border-gray-200 rounded-xl p-6 shadow-sm hover:border-red hover:shadow-lg transition-all duration-200"
+        >
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <h3 class="text-xl font-bold text-navy group-hover:text-red transition-colors">
+                {city.city}, {city.stateAbbr}
+              </h3>
+              <p class="text-sm text-gray-500">{city.county} County</p>
+            </div>
+            <span class="text-red text-2xl">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+
+          <p class="text-sm text-gray-600 mb-4">
+            Serving {city.serviceArea.slice(0, 3).join(', ')}{city.serviceArea.length > 3 ? ` + ${city.serviceArea.length - 3} more` : ''}.
+          </p>
+
+          <div class="text-sm text-gray-700">
+            <span class="font-semibold text-navy">10-yd from</span>{' '}
+            <span class="text-red font-bold">{city.priceRange['10'].split('–')[0]}</span>
+          </div>
+
+          <div class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-red group-hover:underline">
+            View pricing &amp; availability
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="bg-gray-50 py-12 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-2xl font-bold text-navy mb-6">Why Windy City Dumpsters?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="text-3xl font-bold text-red mb-2">Same Day</div>
+          <div class="text-sm text-gray-600">Delivery available when you call before noon</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="text-3xl font-bold text-red mb-2">No Hidden Fees</div>
+          <div class="text-sm text-gray-600">Flat-rate pricing upfront. Overage fees disclosed before booking.</div>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="text-3xl font-bold text-red mb-2">Permit Help</div>
+          <div class="text-sm text-gray-600">We handle CDOT and ROW permit applications for street placements.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-12 px-4 text-center">
+    <p class="text-lg text-gray-700 mb-4">Don't see your city? We serve 40+ communities — give us a call.</p>
+    <a
+      href="tel:+12247253311"
+      class="inline-flex items-center gap-2 bg-red text-white font-bold px-8 py-4 rounded-xl text-xl hover:bg-red/90 transition-colors shadow-lg"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+      </svg>
+      (224) 725-3311
+    </a>
+  </section>
+
+</BaseLayout>

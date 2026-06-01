@@ -5,9 +5,11 @@ export interface Props {
   title: string;
   description: string;
   canonicalURL?: string;
+  ogTitle?: string;
+  ogDescription?: string;
 }
 
-const { title, description, canonicalURL } = Astro.props;
+const { title, description, canonicalURL, ogTitle, ogDescription } = Astro.props;
 const phone = '(224) 725-3311';
 const phoneHref = 'tel:+12247253311';
 ---
@@ -22,6 +24,13 @@ const phoneHref = 'tel:+12247253311';
     <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    {canonicalURL && <meta property="og:url" content={canonicalURL} />}
+    <meta property="og:title" content={ogTitle ?? title} />
+    <meta property="og:description" content={ogDescription ?? description} />
+    <!-- Extra head content from pages -->
+    <slot name="head" />
   </head>
   <body class="bg-white text-gray-900 font-sans">
 
