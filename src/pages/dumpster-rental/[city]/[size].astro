@@ -1,0 +1,372 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import cities from '../../../data/cities.json';
+import sizes from '../../../data/sizes.json';
+
+export async function getStaticPaths() {
+  const availableSizes = sizes.filter((s) => s.available);
+  const paths = [];
+
+  for (const city of cities) {
+    for (const size of availableSizes) {
+      paths.push({
+        params: { city: city.slug, size: size.slug },
+        props: { cityData: city, sizeData: size },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { cityData, sizeData } = Astro.props;
+
+const {
+  city,
+  stateAbbr,
+  slug,
+  phone,
+  tallyFormUrl,
+  priceRange,
+} = cityData;
+
+const {
+  size,
+  name,
+  dimensions,
+  holds,
+  truckLoads,
+  bestFor,
+  notGoodFor,
+  weightLimit,
+  popular,
+} = sizeData;
+
+const phoneHref = `tel:+1${phone.replace(/\D/g, '')}`;
+
+// Price for this specific city + size combo
+const cityPrice = priceRange[String(size) as keyof typeof priceRange] ?? null;
+
+// Available sizes for "Not the right size?" section
+const availableSizes = sizes.filter((s) => s.available && s.slug !== sizeData.slug);
+
+const pageTitle = `${size} Yard Dumpster Rental in ${city}, ${stateAbbr} | Windy City Dumpsters`;
+const pageDescription = `${size} yard dumpster rental in ${city}, ${stateAbbr}. ${cityPrice ? cityPrice + '.' : ''} Same-day delivery available. Call ${phone} for a free quote.`;
+const canonicalURL = `https://windycitydumpsters.com/dumpster-rental/${slug}/${sizeData.slug}/`;
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://windycitydumpsters.com/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Dumpster Rental',
+      item: 'https://windycitydumpsters.com/dumpster-rental/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: `Dumpster Rental in ${city}, ${stateAbbr}`,
+      item: `https://windycitydumpsters.com/dumpster-rental/${slug}/`,
+    },
+    {
+      '@type': 'ListItem',
+      position: 4,
+      name: `${size} Yard Dumpster Rental in ${city}, ${stateAbbr}`,
+      item: canonicalURL,
+    },
+  ],
+};
+---
+
+<BaseLayout title={pageTitle} description={pageDescription} canonicalURL={canonicalURL} ogTitle={pageTitle} ogDescription={pageDescription}>
+
+  <!-- JSON-LD Schemas -->
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
+
+  <!-- Breadcrumbs -->
+  <nav class="bg-gray-100 py-2 px-4 text-sm text-gray-500" aria-label="Breadcrumb">
+    <ol class="max-w-6xl mx-auto flex flex-wrap items-center gap-2">
+      <li><a href="/" class="hover:text-red transition-colors">Home</a></li>
+      <li class="text-gray-400">/</li>
+      <li><a href="/dumpster-rental/" class="hover:text-red transition-colors">Dumpster Rental</a></li>
+      <li class="text-gray-400">/</li>
+      <li><a href={`/dumpster-rental/${slug}/`} class="hover:text-red transition-colors">{city}, {stateAbbr}</a></li>
+      <li class="text-gray-400">/</li>
+      <li class="text-gray-700 font-medium" aria-current="page">{size} Yard</li>
+    </ol>
+  </nav>
+
+  <!-- Hero + Above-the-Fold Lead Capture -->
+  <section class="bg-navy text-white py-10 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+        <!-- Left: Headline + CTA -->
+        <div>
+          {popular && (
+            <span class="inline-block bg-red text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3">
+              Most Popular Size
+            </span>
+          )}
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
+            {size} Yard Dumpster Rental in {city}, {stateAbbr}
+          </h1>
+          <p class="text-white/85 text-lg mb-4">
+            {name} — {dimensions}. {holds}. Same-day delivery available in {city}.
+          </p>
+
+          {cityPrice && (
+            <div class="bg-white/10 border border-white/20 rounded-xl px-5 py-4 mb-6 inline-block">
+              <p class="text-white/70 text-sm mb-1">Rental price in {city}</p>
+              <p class="text-3xl font-bold text-white">{cityPrice}</p>
+              <p class="text-white/60 text-xs mt-1">Includes delivery, pickup &amp; {size <= 10 ? '7' : '10'} days rental. Overweight fees may apply.</p>
+            </div>
+          )}
+
+          <!-- Click-to-Call -->
+          <a
+            href={phoneHref}
+            class="inline-flex items-center gap-3 bg-red text-white font-bold px-6 py-4 rounded-xl text-2xl shadow-lg hover:bg-red/90 transition-colors w-full sm:w-auto justify-center"
+            aria-label={`Call Windy City Dumpsters at ${phone}`}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+            </svg>
+            {phone}
+          </a>
+        </div>
+
+        <!-- Right: Tally Form -->
+        <div class="bg-white rounded-xl overflow-hidden shadow-xl">
+          <div class="bg-red px-4 py-3">
+            <p class="text-white font-bold text-center">Get a Free Quote — Takes 60 Seconds</p>
+          </div>
+          <iframe
+            src={`${tallyFormUrl}?transparentBackground=1`}
+            width="100%"
+            height="500"
+            frameborder="0"
+            title={`${size} yard dumpster rental quote form for ${city}, ${stateAbbr}`}
+          ></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Price + Rental Info Block -->
+  {cityPrice && (
+    <section class="py-10 px-4 bg-red text-white">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-xl font-bold mb-2">{size} Yard Dumpster Price in {city}, {stateAbbr}</h2>
+        <p class="text-4xl font-extrabold mb-3">{cityPrice}</p>
+        <p class="text-white/85 text-base max-w-2xl mx-auto">
+          Price includes delivery, pickup, and a {size <= 10 ? '7' : '10'}-day rental period. Weight limit: {weightLimit}. Overweight fees may apply and are disclosed before booking — no surprise charges.
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- Size Specifics Block -->
+  <section class="py-12 px-4 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-navy mb-8 text-center">
+        {size} Yard Dumpster — Specs &amp; Best Uses
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+
+        <!-- Dimensions -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm">
+          <div class="bg-navy text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+          </div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Dimensions</p>
+          <p class="text-sm font-bold text-navy">{dimensions}</p>
+        </div>
+
+        <!-- Capacity -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm">
+          <div class="bg-navy text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+            </svg>
+          </div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Capacity</p>
+          <p class="text-sm font-bold text-navy">{truckLoads} pickup truck loads</p>
+        </div>
+
+        <!-- Weight Limit -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm">
+          <div class="bg-navy text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+            </svg>
+          </div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Weight Limit</p>
+          <p class="text-sm font-bold text-navy">{weightLimit}</p>
+        </div>
+
+        <!-- Size in yards -->
+        <div class="bg-white border border-gray-200 rounded-xl p-5 text-center shadow-sm">
+          <div class="bg-red text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-3">
+            <span class="text-lg font-extrabold">{size}</span>
+          </div>
+          <p class="text-xs text-gray-500 uppercase tracking-wide font-semibold mb-1">Cubic Yards</p>
+          <p class="text-sm font-bold text-navy">{name}</p>
+        </div>
+
+      </div>
+
+      <!-- Best For / Not Good For -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Best For -->
+        <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-green-600 text-white rounded-full p-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-green-900">Best For</h3>
+          </div>
+          <ul class="space-y-2">
+            {bestFor.map((use: string) => (
+              <li class="flex items-start gap-2 text-sm text-green-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <span class="capitalize">{use}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Not Good For -->
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-red text-white rounded-full p-2 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-red-900">Not Ideal For</h3>
+          </div>
+          <ul class="space-y-2">
+            {notGoodFor.map((use: string) => (
+              <li class="flex items-start gap-2 text-sm text-red-800">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>{use}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Not the Right Size? Section -->
+  <section class="py-12 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-navy mb-3 text-center">
+        Not the Right Size?
+      </h2>
+      <p class="text-center text-gray-600 mb-8">
+        We also offer these sizes in {city}. Click to compare specs and pricing.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        {availableSizes.map((s) => {
+          const sizePrice = priceRange[String(s.size) as keyof typeof priceRange];
+          return (
+            <a
+              href={`/dumpster-rental/${slug}/${s.slug}/`}
+              class={`group block bg-white border-2 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-200 ${s.popular ? 'border-red' : 'border-gray-200 hover:border-red'}`}
+            >
+              {s.popular && (
+                <span class="inline-block bg-red text-white text-xs font-bold px-2 py-0.5 rounded-full uppercase tracking-wide mb-2">
+                  Most Popular
+                </span>
+              )}
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-bold text-navy">{s.name}</h3>
+                {sizePrice && <span class="text-red font-bold">{sizePrice}</span>}
+              </div>
+              <p class="text-sm text-gray-500 mb-1">{s.dimensions}</p>
+              <p class="text-sm text-gray-500 mb-3">{s.holds}</p>
+              <ul class="space-y-1">
+                {s.bestFor.slice(0, 2).map((use: string) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    {use}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-red group-hover:underline">
+                View {s.size}-yard details
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+
+  <!-- Link Back to City Hub -->
+  <section class="py-10 px-4 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-gray-600 mb-4">Looking for more options or local pricing details?</p>
+      <a
+        href={`/dumpster-rental/${slug}/`}
+        class="inline-flex items-center gap-2 bg-navy text-white font-bold px-6 py-3 rounded-xl hover:bg-navy/90 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+        View all dumpster rental options in {city}
+      </a>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-12 px-4 bg-navy text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Ready to Book Your {size}-Yard Dumpster in {city}?
+      </h2>
+      <p class="text-white/80 mb-6 text-lg">Same-day delivery available. Flat-rate pricing. No hidden fees.</p>
+      {cityPrice && (
+        <p class="text-white/70 text-base mb-6">{size} yard from {cityPrice} in {city}, {stateAbbr}.</p>
+      )}
+      <a
+        href={phoneHref}
+        class="inline-flex items-center gap-3 bg-red text-white font-bold px-8 py-4 rounded-xl text-xl shadow-lg hover:bg-red/90 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+        </svg>
+        {phone}
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>
