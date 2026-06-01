@@ -14,6 +14,7 @@ const { cityData } = Astro.props;
 const {
   city,
   stateAbbr,
+  county,
   slug,
   phone,
   serviceArea,
@@ -34,20 +35,36 @@ const pageTitle = `Dumpster Rental in ${city}, ${stateAbbr} | Windy City Dumpste
 const pageDescription = `Rent a dumpster in ${city}, ${stateAbbr} from Windy City Dumpsters. Same-day delivery, permit help, and no hidden fees. Call ${phone}.`;
 const canonicalURL = `https://windycitydumpsters.com/dumpster-rental/${slug}/`;
 
-// Build FAQ data — first 3 use city data, last 3 are genuinely local
+// Extract a short permit sentence for the Quick Answer block
+// We take up to the first two sentences of permitInfo to keep it concise
+function getPermitSummary(info: string): string {
+  const sentences = info.match(/[^.!?]+[.!?]+/g) || [];
+  return sentences.slice(0, 2).join(' ').trim();
+}
+const permitSummary = getPermitSummary(permitInfo);
+
+// Build FAQ data — conversational, AI-chatbot-style questions
 type FAQ = { q: string; a: string };
 const faqs: FAQ[] = [
   {
-    q: `What dumpster sizes are available in ${city}?`,
-    a: `We offer 10-yard, 20-yard, and 30-yard roll-off dumpsters in ${city}. The 10-yard is ideal for single-room cleanouts and heavy debris. The 20-yard handles medium remodels and large garage cleanouts. The 30-yard is our largest option and suits whole-house gut rehabs, roofing tear-offs, and new construction cleanups. Call us for a free quote — we'll give you a firm price in under 2 minutes.`,
+    q: `How much does it cost to rent a dumpster in ${city}?`,
+    a: `Dumpster rental pricing in ${city} depends on the container size (10, 20, or 30 yard), your rental duration, and the type of debris you're disposing of. We provide flat-rate quotes that include delivery, pickup, and disposal — no surprise fees. Call us at ${phone} for a free quote; most quotes take under 2 minutes.`,
   },
   {
-    q: `How does dumpster rental pricing work in ${city}?`,
-    a: `Our ${city} pricing is flat-rate and covers delivery, pickup, disposal, and a set weight limit. The price reflects rental duration (typically 7–14 days) and debris type. Weight overages are billed per ton and disclosed before booking — no surprise charges. Call us for a free quote — we'll give you a firm price in under 2 minutes.`,
+    q: `Do I need a permit for a dumpster in ${city}?`,
+    a: permitInfo,
   },
   {
-    q: `How do I book a dumpster in ${city}?`,
-    a: `Call us at ${phone} or fill out the quote form on this page. We'll confirm availability, pricing, and delivery window — often same-day if you call before noon. We handle all permit paperwork for street placements in ${city} so you don't have to.`,
+    q: `What size dumpster do I need?`,
+    a: `We offer three sizes in ${city}: the 10-yard dumpster (best for single-room cleanouts and heavy debris like concrete), the 20-yard dumpster (our most popular size, ideal for kitchen/bathroom remodels and large garage cleanouts), and the 30-yard dumpster (for whole-house gut rehabs, large roofing tear-offs, and commercial projects). Common uses in ${city} include ${commonUses.slice(0, 3).join(', ')}. Not sure? Call us and we'll help you pick the right size.`,
+  },
+  {
+    q: `How fast can I get a dumpster in ${city}?`,
+    a: `Same-day delivery is available in ${city} — call us at ${phone} before noon and we can typically have a dumpster at your location the same day. Next-day delivery is available for bookings placed later in the day. We serve ${city} and surrounding ${county} County communities.`,
+  },
+  {
+    q: `What can I put in the dumpster?`,
+    a: `You can fill our dumpsters with most household and construction debris — including furniture, appliances, drywall, lumber, roofing shingles, flooring, yard waste, and general junk. Common loads in ${city} include ${commonUses.slice(0, 3).join(', ')}. Prohibited items include hazardous waste (paint, solvents, chemicals), electronics (e-waste), tires, batteries, and asbestos-containing materials. Call us if you're unsure about a specific item.`,
   },
   ...(slug === 'chicago-il'
     ? [
@@ -81,16 +98,16 @@ const faqs: FAQ[] = [
       ]
     : [
         {
-          q: 'Do I need a permit to place a dumpster on an Evanston street?',
-          a: `Yes. Evanston requires a Right-of-Way (ROW) permit from the Public Works Agency (2100 Ridge Ave., 847-448-4311) for any dumpster in a public right-of-way. Dumpsters must be clearly marked with the hauler's contact info and covered when not in use. We manage all ROW paperwork for street placements.`,
+          q: `What are the permit rules for dumpster placement in ${city}?`,
+          a: permitInfo,
         },
         {
-          q: 'Why is Evanston dumpster rental more expensive than some other suburbs?',
-          a: `Evanston's permit fees, the density and age of the housing stock, and longer hauls to approved transfer stations contribute to slightly higher base prices compared to some inland suburbs. The historic homes — Victorian, Craftsman bungalows, brick two-flats — also produce heavier demolition debris (plaster, old-growth lumber, masonry), which increases disposal costs. The pricing on this page reflects realistic Evanston conditions, not a bait-and-switch rate.`,
+          q: `What's the local dumpster rental experience like in ${city}?`,
+          a: localNote,
         },
         {
-          q: 'When is the busiest time for dumpster rentals in Evanston?',
-          a: `Two peaks: spring renovation season (April–June) when homeowners tackle remodels, and late May / early August when Northwestern University students move out. The university move-out period drives a surge in estate-style cleanouts and bulk junk removal across Evanston. Booking at least a week ahead during these windows is strongly recommended.`,
+          q: `Where does my debris go after pickup in ${city}?`,
+          a: transferStation,
         },
       ]),
 ];
@@ -102,16 +119,51 @@ const localBusinessSchema = {
   name: 'Windy City Dumpsters',
   telephone: phone,
   url: 'https://windycitydumpsters.com',
-  areaServed: serviceArea.map((area: string) => ({
-    '@type': 'City',
-    name: area,
-  })),
+  image: 'https://windycitydumpsters.com/img/logo.svg',
+  description: `Roll-off dumpster rental in ${city}, ${stateAbbr} — 10, 20, and 30 yard sizes with same-day delivery available across ${county} County.`,
+  priceRange: '$$',
+  areaServed: [
+    { '@type': 'City', name: city },
+    ...serviceArea
+      .filter((area: string) => area !== city)
+      .map((area: string) => ({ '@type': 'City', name: area })),
+  ],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: [
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday',
+      'Sunday',
+    ],
+    opens: '07:00',
+    closes: '19:00',
+  },
   address: {
     '@type': 'PostalAddress',
     addressLocality: city,
-    addressRegion: stateAbbr,
+    addressRegion: 'IL',
     addressCountry: 'US',
   },
+};
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Dumpster Rental',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Windy City Dumpsters',
+    telephone: '(224) 725-3311',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: `${city}, IL`,
+  },
+  description: `Roll-off dumpster rental in ${city}, IL — 10, 20, and 30 yard sizes with same-day delivery.`,
 };
 
 const faqSchema = {
@@ -157,6 +209,7 @@ const breadcrumbSchema = {
 
   <!-- JSON-LD Schemas -->
   <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} slot="head" />
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} slot="head" />
   <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} slot="head" />
 
@@ -213,6 +266,18 @@ const breadcrumbSchema = {
           ></iframe>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Answer Block -->
+  <section class="py-6 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="border-2 border-navy rounded-xl bg-gray-50 p-6">
+        <h2 class="text-sm font-bold text-navy uppercase tracking-widest mb-3">Quick Answer</h2>
+        <p class="text-gray-800 leading-relaxed">
+          Windy City Dumpsters provides 10, 20, and 30-yard roll-off dumpster rentals in {city}, {stateAbbr} with same-day delivery available across {county} County. {permitSummary} Call <a href={phoneHref} class="text-red font-semibold hover:underline">{phone}</a> or request a free quote online — most quotes take under 2 minutes.
+        </p>
       </div>
     </div>
   </section>
