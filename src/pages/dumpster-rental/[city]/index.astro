@@ -21,7 +21,6 @@ const {
   transferStation,
   commonUses,
   localNote,
-  priceRange,
   tallyFormUrl,
 } = cityData;
 
@@ -32,7 +31,7 @@ const availableSizes = sizes.filter((s) => s.available);
 const otherCities = cities.filter((c) => c.slug !== slug);
 
 const pageTitle = `Dumpster Rental in ${city}, ${stateAbbr} | Windy City Dumpsters`;
-const pageDescription = `Rent a dumpster in ${city}, ${stateAbbr} from Windy City Dumpsters. 10–30 yard roll-offs starting at ${priceRange['10']}. Same-day delivery, permit help, and flat-rate pricing. Call ${phone}.`;
+const pageDescription = `Rent a dumpster in ${city}, ${stateAbbr} from Windy City Dumpsters. Same-day delivery, permit help, and no hidden fees. Call ${phone}.`;
 const canonicalURL = `https://windycitydumpsters.com/dumpster-rental/${slug}/`;
 
 // Build FAQ data — first 3 use city data, last 3 are genuinely local
@@ -40,11 +39,11 @@ type FAQ = { q: string; a: string };
 const faqs: FAQ[] = [
   {
     q: `What dumpster sizes are available in ${city}?`,
-    a: `We offer 10-yard, 20-yard, and 30-yard roll-off dumpsters in ${city}. The 10-yard (${priceRange['10']}) is ideal for single-room cleanouts and heavy debris. The 20-yard (${priceRange['20']}) handles medium remodels and large garage cleanouts. The 30-yard (${priceRange['30']}) is our largest option and suits whole-house gut rehabs, roofing tear-offs, and new construction cleanups.`,
+    a: `We offer 10-yard, 20-yard, and 30-yard roll-off dumpsters in ${city}. The 10-yard is ideal for single-room cleanouts and heavy debris. The 20-yard handles medium remodels and large garage cleanouts. The 30-yard is our largest option and suits whole-house gut rehabs, roofing tear-offs, and new construction cleanups. Call us for a free quote — we'll give you a firm price in under 2 minutes.`,
   },
   {
     q: `How does dumpster rental pricing work in ${city}?`,
-    a: `Our ${city} pricing is flat-rate and covers delivery, pickup, disposal, and a set weight limit. A 10-yard dumpster runs ${priceRange['10']}, a 20-yard runs ${priceRange['20']}, and a 30-yard runs ${priceRange['30']}. The range reflects rental duration (typically 7–14 days) and debris type. Weight overages are billed per ton and disclosed before booking — no surprise charges.`,
+    a: `Our ${city} pricing is flat-rate and covers delivery, pickup, disposal, and a set weight limit. The price reflects rental duration (typically 7–14 days) and debris type. Weight overages are billed per ton and disclosed before booking — no surprise charges. Call us for a free quote — we'll give you a firm price in under 2 minutes.`,
   },
   {
     q: `How do I book a dumpster in ${city}?`,
@@ -54,7 +53,7 @@ const faqs: FAQ[] = [
     ? [
         {
           q: 'Do I need a permit to place a dumpster on a Chicago street?',
-          a: `Yes. Any dumpster placed on a public street or sidewalk in Chicago requires a permit from the Chicago Department of Transportation (CDOT) through the City's Inspection, Permitting & Licensing portal. Permits require proof of $1M liability insurance naming the City as additional insured, plus a $5,000 letter of credit. We handle all of this on your behalf — just let us know it's a street placement when you book.`,
+          a: `Yes. Any dumpster placed on a public street or sidewalk in Chicago requires a permit from the Chicago Department of Transportation (CDOT) through the City's Inspection, Permitting &amp; Licensing portal. Permits require proof of liability insurance naming the City as additional insured, plus a letter of credit. We handle all of this on your behalf — just let us know it's a street placement when you book.`,
         },
         {
           q: 'Can I use an alley instead of the street for my Chicago dumpster?',
@@ -69,7 +68,7 @@ const faqs: FAQ[] = [
     ? [
         {
           q: 'Do I need a permit to place a dumpster on a Naperville street?',
-          a: `Naperville requires a Right-of-Way (ROW) permit from the City's Public Works Department for any dumpster placed in a public right-of-way — street, alley, parkway, or sidewalk. The City requests up to 14 days for review and fees run approximately $88 for non-excavation permits. Most residential placements go on private driveways in Naperville, which avoids the permit requirement entirely. We handle ROW applications when street placement is needed.`,
+          a: `Naperville requires a Right-of-Way (ROW) permit from the City's Public Works Department for any dumpster placed in a public right-of-way — street, alley, parkway, or sidewalk. The City requests up to 14 days for review. Most residential placements go on private driveways in Naperville, which avoids the permit requirement entirely. We handle ROW applications when street placement is needed.`,
         },
         {
           q: 'What is the most common reason people rent dumpsters in Naperville?',
@@ -83,7 +82,7 @@ const faqs: FAQ[] = [
     : [
         {
           q: 'Do I need a permit to place a dumpster on an Evanston street?',
-          a: `Yes. Evanston requires a Right-of-Way (ROW) permit from the Public Works Agency (2100 Ridge Ave., 847-448-4311) for any dumpster in a public right-of-way. Permits cost $50 for the first week and $25 per additional week. Dumpsters must be clearly marked with the hauler's contact info and covered when not in use. Failure to obtain a permit carries a $500-per-day penalty. We manage all ROW paperwork for street placements.`,
+          a: `Yes. Evanston requires a Right-of-Way (ROW) permit from the Public Works Agency (2100 Ridge Ave., 847-448-4311) for any dumpster in a public right-of-way. Dumpsters must be clearly marked with the hauler's contact info and covered when not in use. We manage all ROW paperwork for street placements.`,
         },
         {
           q: 'Why is Evanston dumpster rental more expensive than some other suburbs?',
@@ -198,14 +197,6 @@ const breadcrumbSchema = {
             {phone}
           </a>
 
-          <!-- Price teaser -->
-          <div class="flex flex-wrap gap-3">
-            {Object.entries(priceRange).map(([size, range]) => (
-              <div class="bg-white/10 border border-white/20 rounded-lg px-3 py-2 text-sm">
-                <span class="font-bold">{size}-yd:</span> {range as string}
-              </div>
-            ))}
-          </div>
         </div>
 
         <!-- Right: Tally Form -->
@@ -235,9 +226,7 @@ const breadcrumbSchema = {
       <p class="text-center text-gray-600 mb-8">Click a size to see full specs, best uses, and weight limits.</p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {availableSizes.map((size) => {
-          const cityPrice = priceRange[String(size.size) as keyof typeof priceRange];
-          return (
+        {availableSizes.map((size) => (
             <a
               href={`/dumpster-rental/${slug}/${size.slug}/`}
               class={`group relative block bg-white border-2 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-200 ${size.popular ? 'border-red' : 'border-gray-200 hover:border-red'}`}
@@ -255,12 +244,15 @@ const breadcrumbSchema = {
               <p class="text-sm text-gray-500 mb-1">{size.dimensions}</p>
               <p class="text-sm text-gray-500 mb-3">{size.holds}</p>
 
-              {cityPrice && (
-                <div class="mb-4">
-                  <span class="text-2xl font-bold text-red">{cityPrice}</span>
-                  <span class="text-sm text-gray-500 ml-1">in {city}</span>
-                </div>
-              )}
+              <div class="mb-4">
+                <a
+                  href={tallyFormUrl}
+                  class="inline-block text-sm font-semibold text-red hover:underline"
+                  onclick="event.stopPropagation()"
+                >
+                  Get a Free Quote →
+                </a>
+              </div>
 
               <ul class="space-y-1 mb-4">
                 {size.bestFor.slice(0, 3).map((use) => (
@@ -280,8 +272,7 @@ const breadcrumbSchema = {
                 </svg>
               </div>
             </a>
-          );
-        })}
+        ))}
       </div>
 
       <p class="text-center mt-6 text-gray-600 text-sm">

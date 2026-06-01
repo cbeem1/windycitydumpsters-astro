@@ -17,7 +17,7 @@
       "Pilsen",
       "Bridgeport"
     ],
-    "permitInfo": "Any dumpster placed on a public street or sidewalk in Chicago requires a permit from the Chicago Department of Transportation (CDOT). Apply through the City of Chicago Inspection, Permitting & Licensing portal at ipi.cityofchicago.org. CDOT offers 3-day and 30-day permit durations. Applicants must provide proof of liability insurance of at least $1,000,000 naming the City of Chicago as additional insured, plus a $5,000 letter of credit. Permit fees vary by location — dumpsters in the Central Business District carry a higher fee. We handle permit applications on your behalf for street placements.",
+    "permitInfo": "Any dumpster placed on a public street or sidewalk in Chicago requires a permit from the Chicago Department of Transportation (CDOT). Apply through the City of Chicago Inspection, Permitting & Licensing portal at ipi.cityofchicago.org. CDOT offers 3-day and 30-day permit durations. Applicants must provide proof of liability insurance of plus a letter of credit. Permit fees vary by location — dumpsters in the Central Business District carry a higher fee. We handle permit applications on your behalf for street placements.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910). Accepts C&D debris including wood, concrete, drywall, shingles, brick, and metal. Mon–Fri 6am–5pm, Sat 7am–12pm. Also: LRS Chicago Transfer Station on the Southwest Side accepts C&D, concrete, roofing, and yard waste — call LRS at 773-579-1200 for current hours.",
     "priceRange": {
       "10": "$299–$419",
@@ -51,7 +51,7 @@
       "Woodridge",
       "Warrenville"
     ],
-    "permitInfo": "Naperville requires a Right-of-Way (ROW) permit from the City of Naperville Public Works Department for any dumpster placed in a city-owned right-of-way (street, alley, parkway, or sidewalk). Apply through the City's Permits and Licenses portal at naperville.il.us or call (630) 420-6100. The permit application must include a site plan or aerial showing exact dumpster placement, rental dates, traffic control devices, and any sidewalk impacts. The City requests up to 14 calendar days for ROW permit review. Fees are typically $88 for non-excavation permits. Dumpsters placed entirely on private driveways or construction sites do not require a ROW permit.",
+    "permitInfo": "Naperville requires a Right-of-Way (ROW) permit from the City of Naperville Public Works Department for any dumpster placed in a city-owned right-of-way (street, alley, parkway, or sidewalk). Apply through the City's Permits and Licenses portal at naperville.il.us or call (630) 420-6100. The permit application must include a site plan or aerial showing exact dumpster placement, rental dates, traffic control devices, and any sidewalk impacts. The City requests up to 14 calendar days for ROW permit review. Dumpsters placed entirely on private driveways or construction sites do not require a ROW permit.",
     "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) — a LEED-certified C&D recycling and disposal facility serving DuPage County. For closer drop-off, LRS West Chicago Transfer Station (DuPage/Kane border area) also accepts C&D and construction debris; contact LRS at 630-377-7700. The City of Naperville's Household Hazardous Waste facility is at 156 Fort Hill Drive, open Saturdays and Sundays 9am–2pm (not for C&D debris).",
     "priceRange": {
       "10": "$325–$450",
@@ -84,7 +84,7 @@
       "Rogers Park",
       "Lincolnwood"
     ],
-    "permitInfo": "Evanston requires a Right-of-Way (ROW) permit from the Evanston Public Works Agency for any dumpster placed in a public right-of-way (street, alley, parkway, or sidewalk). Contact the Public Works Agency at 2100 Ridge Ave., Evanston, IL 60201, phone 847-448-4311 (or dial 3-1-1). Permit fees are $50 for the first week and $25 for each additional week. The dumpster must be clearly marked with the hauler's name and phone number and covered when not in use. Failure to obtain a permit carries a $500-per-day penalty. We handle all permit paperwork for street placements.",
+    "permitInfo": "Evanston requires a Right-of-Way (ROW) permit from the Evanston Public Works Agency for any dumpster placed in a public right-of-way (street, alley, parkway, or sidewalk). Contact the Public Works Agency at 2100 Ridge Ave., Evanston, IL 60201, phone 847-448-4311 (or dial 3-1-1). The dumpster must be clearly marked with the hauler's name and phone number and covered when not in use. We handle all permit paperwork for street placements.",
     "transferStation": "LRS Chicago Transfer Station (Southwest Chicago) accepts C&D and construction debris from North Shore clients — call 773-579-1200. Tri-State Disposal Transfer Station at 13903 S. Ashland Ave., Riverdale, IL 60827 is also an option for larger loads. For recycling, Evanston's Public Works drop-off is available for some materials at 2020 Asbury Ave.",
     "priceRange": {
       "10": "$340–$475",
@@ -117,7 +117,7 @@
       "Berwyn",
       "Cicero"
     ],
-    "permitInfo": "Oak Park requires a Right-of-Way permit from the Oak Park Public Works Department for any dumpster placed on a public street or in the parkway. Apply by contacting Public Works at 123 Madison St., Oak Park, IL 60302, phone (708) 358-5740. The permit fee is $50 for up to 14 days. Dumpsters placed entirely on private property (driveways, parking areas) do not require a permit. The dumpster must be marked with reflective tape and the hauler's contact information.",
+    "permitInfo": "Oak Park requires a Right-of-Way permit from the Oak Park Public Works Department for any dumpster placed on a public street or in the parkway. Apply by contacting Public Works at 123 Madison St., Oak Park, IL 60302, phone (708) 358-5740. Dumpsters placed entirely on private property (driveways, parking areas) do not require a permit. The dumpster must be marked with reflective tape and the hauler's contact information.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) is the primary C&D facility serving Oak Park. Also, LRS operates transfer facilities on Chicago's West Side for construction debris — call 773-579-1200 for routing.",
     "priceRange": {
       "10": "$310–$430",
@@ -151,7 +151,7 @@
       "Rolling Meadows",
       "Roselle"
     ],
-    "permitInfo": "Schaumburg requires a Right-of-Way permit from the Village of Schaumburg Public Works Department for dumpsters placed in any public right-of-way, including streets and parkways. Contact Public Works at 101 Schaumburg Court, Schaumburg, IL 60193, phone (847) 923-3900. Permit fees are approximately $75 for a standard rental period. Dumpsters on private driveways or commercial lots do not require a permit. Reflective markers are required on all street-placed containers.",
+    "permitInfo": "Schaumburg requires a Right-of-Way permit from the Village of Schaumburg Public Works Department for dumpsters placed in any public right-of-way, including streets and parkways. Contact Public Works at 101 Schaumburg Court, Schaumburg, IL 60193, phone (847) 923-3900. Dumpsters on private driveways or commercial lots do not require a permit. Reflective markers are required on all street-placed containers.",
     "transferStation": "Waste Management Northwest Suburban Transfer Station, 1300 E. Irving Park Rd., Streamwood, IL 60107 (847-289-7700) serves Schaumburg-area C&D disposal. The facility accepts wood, drywall, roofing shingles, and mixed construction debris.",
     "priceRange": {
       "10": "$320–$445",
@@ -185,7 +185,7 @@
       "Buffalo Grove",
       "Wheeling"
     ],
-    "permitInfo": "Arlington Heights requires a Right-of-Way permit from the Village of Arlington Heights Community Development Department for dumpsters placed in the public right-of-way. Contact the department at 33 S. Arlington Heights Rd., Arlington Heights, IL 60005, phone (847) 368-5200. The permit fee is $85 for up to 30 days. Dumpsters on private property do not require a permit. Street-placed dumpsters must be equipped with reflective markers.",
+    "permitInfo": "Arlington Heights requires a Right-of-Way permit from the Village of Arlington Heights Community Development Department for dumpsters placed in the public right-of-way. Contact the department at 33 S. Arlington Heights Rd., Arlington Heights, IL 60005, phone (847) 368-5200. Dumpsters on private property do not require a permit. Street-placed dumpsters must be equipped with reflective markers.",
     "transferStation": "Waste Management Northwest Suburban Transfer Station, 1300 E. Irving Park Rd., Streamwood, IL 60107 (847-289-7700) is the primary C&D disposal facility for Arlington Heights. Accepts mixed C&D, roofing shingles, drywall, and lumber.",
     "priceRange": {
       "10": "$315–$440",
@@ -219,7 +219,7 @@
       "Evanston",
       "Golf"
     ],
-    "permitInfo": "Skokie requires a Right-of-Way permit from the Village of Skokie Public Works Department for any dumpster placed in the public right-of-way. Contact Public Works at 5127 Oakton St., Skokie, IL 60077, phone (847) 933-8427. Standard permit fee is $50 for a 7-day period, with renewal available. Dumpsters placed on private driveways or property do not require a permit. Containers must be marked with reflective tape and the hauler's phone number.",
+    "permitInfo": "Skokie requires a Right-of-Way permit from the Village of Skokie Public Works Department for any dumpster placed in the public right-of-way. Contact Public Works at 5127 Oakton St., Skokie, IL 60077, phone (847) 933-8427. Dumpsters placed on private driveways or property do not require a permit. Containers must be marked with reflective tape and the hauler's phone number.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) serves North Shore suburbs including Skokie. LRS also operates a transfer facility on Chicago's North Side — call 773-579-1200 for the nearest drop location.",
     "priceRange": {
       "10": "$330–$455",
@@ -253,7 +253,7 @@
       "Oak Park",
       "Chicago (Austin)"
     ],
-    "permitInfo": "Cicero requires a permit from the Town of Cicero Department of Public Works for any dumpster placed in the public right-of-way. Contact Public Works at 4937 W. 25th St., Cicero, IL 60804, phone (708) 656-3600. Permit fees are approximately $75 for a standard rental period. Dumpsters on private property do not require a permit. Cicero uses a town government structure rather than a village or city, so permitting runs through the Town Administrator's office.",
+    "permitInfo": "Cicero requires a permit from the Town of Cicero Department of Public Works for any dumpster placed in the public right-of-way. Contact Public Works at 4937 W. 25th St., Cicero, IL 60804, phone (708) 656-3600. Dumpsters on private property do not require a permit. Cicero uses a town government structure rather than a village or city, so permitting runs through the Town Administrator's office.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) is convenient for Cicero C&D debris. Also, LRS operates transfer facilities on Chicago's Southwest Side — call 773-579-1200 for current routing.",
     "priceRange": {
       "10": "$299–$420",
@@ -287,7 +287,7 @@
       "Sugar Grove",
       "Batavia"
     ],
-    "permitInfo": "Aurora requires a Right-of-Way permit from the City of Aurora Public Works Department for dumpsters placed in any public right-of-way. Apply by contacting Aurora Public Works at 400 W. Illinois Ave., Aurora, IL 60506, phone (630) 256-3700. Permit fees are approximately $80 for a standard rental period. Dumpsters on private property do not require a permit. Aurora spans both Kane and DuPage counties — permit requirements are the same city-wide regardless of county.",
+    "permitInfo": "Aurora requires a Right-of-Way permit from the City of Aurora Public Works Department for dumpsters placed in any public right-of-way. Apply by contacting Aurora Public Works at 400 W. Illinois Ave., Aurora, IL 60506, phone (630) 256-3700. Dumpsters on private property do not require a permit. Aurora spans both Kane and DuPage counties — permit requirements are the same city-wide regardless of county.",
     "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) serves Kane County C&D disposal. Republic Services also operates a transfer station in the Aurora area — call (630) 896-8900 for current hours and accepted materials.",
     "priceRange": {
       "10": "$329–$455",
@@ -321,7 +321,7 @@
       "Lockport",
       "Bolingbrook"
     ],
-    "permitInfo": "Joliet requires a Right-of-Way permit from the City of Joliet Division of Engineering for dumpsters placed in any public right-of-way. Contact Engineering at 150 W. Jefferson St., Joliet, IL 60432, phone (815) 724-4200. Permit fees are approximately $75 for up to 30 days. Dumpsters on private property or construction sites within fenced areas do not require a permit. Will County has separate regulations for unincorporated areas — confirm your address is within Joliet city limits.",
+    "permitInfo": "Joliet requires a Right-of-Way permit from the City of Joliet Division of Engineering for dumpsters placed in any public right-of-way. Contact Engineering at 150 W. Jefferson St., Joliet, IL 60432, phone (815) 724-4200. Dumpsters on private property or construction sites within fenced areas do not require a permit. Will County has separate regulations for unincorporated areas — confirm your address is within Joliet city limits.",
     "transferStation": "Will County Solid Waste Management Facility, 2050 W. Laraway Rd., Joliet, IL 60431 (815-727-8476) accepts C&D debris including concrete, drywall, roofing materials, and wood. Waste Management also operates a transfer station in the Joliet area — call (815) 727-7760 for routing and hours.",
     "priceRange": {
       "10": "$315–$435",
@@ -355,7 +355,7 @@
       "Carpentersville",
       "Dundee"
     ],
-    "permitInfo": "Elgin requires a Right-of-Way permit from the City of Elgin Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 150 Dexter Court, Elgin, IL 60120, phone (847) 931-6001. Permit fees are approximately $75 for up to 14 days. Dumpsters placed entirely on private property do not require a permit. Elgin spans both Kane and Cook counties — ROW permit requirements are the same citywide.",
+    "permitInfo": "Elgin requires a Right-of-Way permit from the City of Elgin Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 150 Dexter Court, Elgin, IL 60120, phone (847) 931-6001. Dumpsters placed entirely on private property do not require a permit. Elgin spans both Kane and Cook counties — ROW permit requirements are the same citywide.",
     "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) is the primary C&D disposal facility for the Elgin area. Accepts construction and demolition debris including concrete, drywall, lumber, and roofing shingles.",
     "priceRange": {
       "10": "$320–$445",
@@ -389,7 +389,7 @@
       "Beach Park",
       "Libertyville"
     ],
-    "permitInfo": "Waukegan requires a Right-of-Way permit from the City of Waukegan Department of Public Works for dumpsters placed in any public right-of-way. Contact Public Works at 2505 Belvidere Rd., Waukegan, IL 60085, phone (847) 360-9100. Permit fees are approximately $60 for up to 14 days. Dumpsters on private property do not require a permit. Lake County has environmental regulations around disposal near the shoreline — confirm materials are properly sorted if working near Lake Michigan.",
+    "permitInfo": "Waukegan requires a Right-of-Way permit from the City of Waukegan Department of Public Works for dumpsters placed in any public right-of-way. Contact Public Works at 2505 Belvidere Rd., Waukegan, IL 60085, phone (847) 360-9100. Dumpsters on private property do not require a permit. Lake County has environmental regulations around disposal near the shoreline — confirm materials are properly sorted if working near Lake Michigan.",
     "transferStation": "Lake County Solid Waste Agency Transfer Station, 1814 Lewis Ave., Zion, IL 60099 (847-623-4747) accepts C&D debris for Lake County residents and contractors. Also, Waste Management operates a transfer facility in the Waukegan area — call (847) 623-4800 for current hours.",
     "priceRange": {
       "10": "$325–$450",
@@ -423,7 +423,7 @@
       "Stickney",
       "Forest View"
     ],
-    "permitInfo": "Berwyn requires a permit from the City of Berwyn Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 6700 W. 26th St., Berwyn, IL 60402, phone (708) 788-2660. Permit fees are approximately $50 for a standard rental period. Dumpsters on private driveways or property do not require a permit. The city requires haulers to be licensed with the city before operating within Berwyn limits.",
+    "permitInfo": "Berwyn requires a permit from the City of Berwyn Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 6700 W. 26th St., Berwyn, IL 60402, phone (708) 788-2660. Dumpsters on private driveways or property do not require a permit. The city requires haulers to be licensed with the city before operating within Berwyn limits.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) serves Berwyn's C&D disposal needs. The facility accepts wood, drywall, concrete, masonry, and roofing materials.",
     "priceRange": {
       "10": "$299–$420",
@@ -457,7 +457,7 @@
       "Mount Prospect",
       "Niles"
     ],
-    "permitInfo": "Des Plaines requires a Right-of-Way permit from the City of Des Plaines Public Works and Engineering Department for dumpsters placed in any public right-of-way. Contact Public Works at 1420 Miner St., Des Plaines, IL 60016, phone (847) 391-5390. Permit fees are approximately $80 for up to 14 days. Dumpsters on private property do not require a permit. O'Hare Airport flight paths run over parts of Des Plaines — this has no bearing on permits but is a local landmark often referenced in the area.",
+    "permitInfo": "Des Plaines requires a Right-of-Way permit from the City of Des Plaines Public Works and Engineering Department for dumpsters placed in any public right-of-way. Contact Public Works at 1420 Miner St., Des Plaines, IL 60016, phone (847) 391-5390. Dumpsters on private property do not require a permit. O'Hare Airport flight paths run over parts of Des Plaines — this has no bearing on permits but is a local landmark often referenced in the area.",
     "transferStation": "Waste Management Northwest Suburban Transfer Station, 1300 E. Irving Park Rd., Streamwood, IL 60107 (847-289-7700) serves Des Plaines-area C&D disposal. Also, LRS operates a transfer facility in the northwest suburban corridor — call 847-579-1200 for current routing.",
     "priceRange": {
       "10": "$310–$435",
@@ -491,7 +491,7 @@
       "Homer Glen",
       "Palos Heights"
     ],
-    "permitInfo": "Orland Park requires a permit from the Village of Orland Park Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 14700 Ravinia Ave., Orland Park, IL 60462, phone (708) 403-6165. Permit fees are approximately $75 for a standard placement period. Dumpsters on private driveways or construction sites do not require a permit. Many Orland Park residential properties have wide driveways, making off-street placement the norm.",
+    "permitInfo": "Orland Park requires a permit from the Village of Orland Park Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 14700 Ravinia Ave., Orland Park, IL 60462, phone (708) 403-6165. Dumpsters on private driveways or construction sites do not require a permit. Many Orland Park residential properties have wide driveways, making off-street placement the norm.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) is the primary C&D disposal facility serving the south and southwest suburbs including Orland Park. Accepts wood, drywall, roofing, and mixed C&D.",
     "priceRange": {
       "10": "$315–$440",
@@ -525,7 +525,7 @@
       "Plainfield",
       "Lisle"
     ],
-    "permitInfo": "Bolingbrook requires a Right-of-Way permit from the Village of Bolingbrook Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 375 W. Briarcliff Rd., Bolingbrook, IL 60440, phone (630) 226-8450. Permit fees are approximately $75 for up to 30 days. Dumpsters placed entirely on private property do not require a permit. Bolingbrook spans Will and DuPage counties — permit requirements are uniform across the village.",
+    "permitInfo": "Bolingbrook requires a Right-of-Way permit from the Village of Bolingbrook Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 375 W. Briarcliff Rd., Bolingbrook, IL 60440, phone (630) 226-8450. Dumpsters placed entirely on private property do not require a permit. Bolingbrook spans Will and DuPage counties — permit requirements are uniform across the village.",
     "transferStation": "Will County Solid Waste Management Facility, 2050 W. Laraway Rd., Joliet, IL 60431 (815-727-8476) serves the Will County portion of Bolingbrook. For DuPage County addresses within Bolingbrook, LRS West Chicago Transfer Station (630-377-7700) is an alternative.",
     "priceRange": {
       "10": "$315–$440",
@@ -559,7 +559,7 @@
       "Golf",
       "Niles"
     ],
-    "permitInfo": "Glenview requires a Right-of-Way permit from the Village of Glenview Public Works Department for dumpsters placed in any public right-of-way including streets and parkways. Contact Public Works at 1225 Waukegan Rd., Glenview, IL 60025, phone (847) 724-1700. Permit fees are approximately $100 for a standard rental period. Dumpsters on private driveways do not require a permit. The Former Glenview Naval Air Station redevelopment area (The Glen) may have additional site-specific permitting requirements.",
+    "permitInfo": "Glenview requires a Right-of-Way permit from the Village of Glenview Public Works Department for dumpsters placed in any public right-of-way including streets and parkways. Contact Public Works at 1225 Waukegan Rd., Glenview, IL 60025, phone (847) 724-1700. Dumpsters on private driveways do not require a permit. The Former Glenview Naval Air Station redevelopment area (The Glen) may have additional site-specific permitting requirements.",
     "transferStation": "LRS North Shore Transfer Station serves the Glenview area for C&D disposal — call LRS at 847-579-1200 for current location and hours. Tri-State Disposal Transfer Station at 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) is also accessible for larger loads.",
     "priceRange": {
       "10": "$335–$465",
@@ -593,7 +593,7 @@
       "Buffalo Grove",
       "Wheeling"
     ],
-    "permitInfo": "Northbrook requires a Right-of-Way permit from the Village of Northbrook Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 1225 Cedar Lane, Northbrook, IL 60062, phone (847) 664-4100. Permit fees are approximately $100 for a standard rental period. Dumpsters placed entirely on private driveways or construction sites within property lines do not require a permit. Northbrook's tree-lined streets mean haulers must take care not to damage parkway trees during delivery.",
+    "permitInfo": "Northbrook requires a Right-of-Way permit from the Village of Northbrook Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 1225 Cedar Lane, Northbrook, IL 60062, phone (847) 664-4100. Dumpsters placed entirely on private driveways or construction sites within property lines do not require a permit. Northbrook's tree-lined streets mean haulers must take care not to damage parkway trees during delivery.",
     "transferStation": "LRS North Shore Transfer Station serves Northbrook for C&D debris — call LRS at 847-579-1200 for routing. Tri-State Disposal at 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) handles larger loads from the northern suburbs.",
     "priceRange": {
       "10": "$345–$470",
@@ -627,7 +627,7 @@
       "Hometown",
       "Merrionette Park"
     ],
-    "permitInfo": "Oak Lawn requires a permit from the Village of Oak Lawn Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 9446 S. Raymond Ave., Oak Lawn, IL 60453, phone (708) 499-7748. Permit fees are approximately $60 for a standard rental period. Dumpsters on private driveways do not require a permit. The village requires haulers to be licensed to operate within Oak Lawn.",
+    "permitInfo": "Oak Lawn requires a permit from the Village of Oak Lawn Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 9446 S. Raymond Ave., Oak Lawn, IL 60453, phone (708) 499-7748. Dumpsters on private driveways do not require a permit. The village requires haulers to be licensed to operate within Oak Lawn.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) is the primary C&D facility serving Oak Lawn and the south suburbs. Accepts wood, drywall, roofing, concrete, and mixed C&D debris.",
     "priceRange": {
       "10": "$299–$419",
@@ -661,7 +661,7 @@
       "Frankfort",
       "Matteson"
     ],
-    "permitInfo": "Tinley Park requires a permit from the Village of Tinley Park Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 17355 S. 68th Court, Tinley Park, IL 60477, phone (708) 444-5500. Permit fees are approximately $75 for up to 30 days. Dumpsters placed on private driveways or within a construction site on private property do not require a permit. The village spans Cook and Will counties, but permitting requirements are uniform throughout.",
+    "permitInfo": "Tinley Park requires a permit from the Village of Tinley Park Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 17355 S. 68th Court, Tinley Park, IL 60477, phone (708) 444-5500. Dumpsters placed on private driveways or within a construction site on private property do not require a permit. The village spans Cook and Will counties, but permitting requirements are uniform throughout.",
     "transferStation": "Tri-State Disposal Transfer Station, 13903 S. Ashland Ave., Riverdale, IL 60827 (708-388-9910) serves the south and southwest suburbs including Tinley Park for C&D debris disposal.",
     "priceRange": {
       "10": "$310–$435",
@@ -695,7 +695,7 @@
       "Glen Ellyn",
       "Darien"
     ],
-    "permitInfo": "Downers Grove requires a Right-of-Way permit from the Village of Downers Grove Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 5101 Walnut Ave., Downers Grove, IL 60515, phone (630) 434-5460. Permit fees are approximately $80 for up to 14 days. Dumpsters placed entirely on private property do not require a permit. DuPage County's strict waste disposal tracking requirements mean licensed haulers must provide certified weight tickets and disposal receipts.",
+    "permitInfo": "Downers Grove requires a Right-of-Way permit from the Village of Downers Grove Public Works Department for dumpsters placed in the public right-of-way. Contact Public Works at 5101 Walnut Ave., Downers Grove, IL 60515, phone (630) 434-5460. Dumpsters placed entirely on private property do not require a permit. DuPage County's strict waste disposal tracking requirements mean licensed haulers must provide certified weight tickets and disposal receipts.",
     "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) accepts DuPage County C&D debris. LRS West Chicago Transfer Station also serves Downers Grove — call LRS at 630-377-7700 for current hours and accepted materials.",
     "priceRange": {
       "10": "$325–$450",
@@ -729,7 +729,7 @@
       "Inverness",
       "Hoffman Estates"
     ],
-    "permitInfo": "Palatine requires a Right-of-Way permit from the Village of Palatine Public Works Department for dumpsters placed in any public right-of-way. Contact Public Works at 148 W. Wilson St., Palatine, IL 60067, phone (847) 359-9050. Permit fees are approximately $85 for a standard rental period. Dumpsters on private property or driveways do not require a permit. The village requires proof of hauler licensing and liability insurance for permitted placements.",
+    "permitInfo": "Palatine requires a Right-of-Way permit from the Village of Palatine Public Works Department for dumpsters placed in any public right-of-way. Contact Public Works at 148 W. Wilson St., Palatine, IL 60067, phone (847) 359-9050. Dumpsters on private property or driveways do not require a permit. The village requires proof of hauler licensing and liability insurance for permitted placements.",
     "transferStation": "Waste Management Northwest Suburban Transfer Station, 1300 E. Irving Park Rd., Streamwood, IL 60107 (847-289-7700) serves Palatine-area C&D disposal. The facility accepts wood, drywall, shingles, and mixed construction debris.",
     "priceRange": {
       "10": "$315–$440",
@@ -763,7 +763,7 @@
       "West Chicago",
       "Warrenville"
     ],
-    "permitInfo": "Wheaton requires a Right-of-Way permit from the City of Wheaton Public Works Department for dumpsters placed in any public right-of-way. Contact Public Works at 303 W. Wesley St., Wheaton, IL 60187, phone (630) 260-2000. Permit fees are approximately $80 for up to 14 days. Dumpsters placed entirely on private property do not require a permit. As DuPage County's seat, Wheaton enforces county-level waste disposal documentation requirements — licensed haulers must provide certified disposal receipts.",
+    "permitInfo": "Wheaton requires a Right-of-Way permit from the City of Wheaton Public Works Department for dumpsters placed in any public right-of-way. Contact Public Works at 303 W. Wesley St., Wheaton, IL 60187, phone (630) 260-2000. Dumpsters placed entirely on private property do not require a permit. As DuPage County's seat, Wheaton enforces county-level waste disposal documentation requirements — licensed haulers must provide certified disposal receipts.",
     "transferStation": "Midwest Material Management (MMM), 370 S. Brier Hill Rd., Hampshire, IL 60140 (847-426-6354) accepts DuPage County C&D debris including lumber, drywall, concrete, and roofing shingles. LRS West Chicago Transfer Station is also accessible for Wheaton — call LRS at 630-377-7700.",
     "priceRange": {
       "10": "$325–$450",

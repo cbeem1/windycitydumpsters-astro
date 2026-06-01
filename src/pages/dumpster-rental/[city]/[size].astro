@@ -27,7 +27,6 @@ const {
   slug,
   phone,
   tallyFormUrl,
-  priceRange,
 } = cityData;
 
 const {
@@ -44,14 +43,11 @@ const {
 
 const phoneHref = `tel:+1${phone.replace(/\D/g, '')}`;
 
-// Price for this specific city + size combo
-const cityPrice = priceRange[String(size) as keyof typeof priceRange] ?? null;
-
 // Available sizes for "Not the right size?" section
 const availableSizes = sizes.filter((s) => s.available && s.slug !== sizeData.slug);
 
 const pageTitle = `${size} Yard Dumpster Rental in ${city}, ${stateAbbr} | Windy City Dumpsters`;
-const pageDescription = `${size} yard dumpster rental in ${city}, ${stateAbbr}. ${cityPrice ? cityPrice + '.' : ''} Same-day delivery available. Call ${phone} for a free quote.`;
+const pageDescription = `${size} yard dumpster rental in ${city}, ${stateAbbr}. Same-day delivery available. Call (224) 725-3311 for a free quote.`;
 const canonicalURL = `https://windycitydumpsters.com/dumpster-rental/${slug}/${sizeData.slug}/`;
 
 const breadcrumbSchema = {
@@ -123,14 +119,6 @@ const breadcrumbSchema = {
             {name} — {dimensions}. {holds}. Same-day delivery available in {city}.
           </p>
 
-          {cityPrice && (
-            <div class="bg-white/10 border border-white/20 rounded-xl px-5 py-4 mb-6 inline-block">
-              <p class="text-white/70 text-sm mb-1">Rental price in {city}</p>
-              <p class="text-3xl font-bold text-white">{cityPrice}</p>
-              <p class="text-white/60 text-xs mt-1">Includes delivery, pickup &amp; {size <= 10 ? '7' : '10'} days rental. Overweight fees may apply.</p>
-            </div>
-          )}
-
           <!-- Click-to-Call -->
           <a
             href={phoneHref}
@@ -161,19 +149,6 @@ const breadcrumbSchema = {
       </div>
     </div>
   </section>
-
-  <!-- Price + Rental Info Block -->
-  {cityPrice && (
-    <section class="py-10 px-4 bg-red text-white">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-xl font-bold mb-2">{size} Yard Dumpster Price in {city}, {stateAbbr}</h2>
-        <p class="text-4xl font-extrabold mb-3">{cityPrice}</p>
-        <p class="text-white/85 text-base max-w-2xl mx-auto">
-          Price includes delivery, pickup, and a {size <= 10 ? '7' : '10'}-day rental period. Weight limit: {weightLimit}. Overweight fees may apply and are disclosed before booking — no surprise charges.
-        </p>
-      </div>
-    </section>
-  )}
 
   <!-- Size Specifics Block -->
   <section class="py-12 px-4 bg-gray-50">
@@ -290,9 +265,7 @@ const breadcrumbSchema = {
       </p>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        {availableSizes.map((s) => {
-          const sizePrice = priceRange[String(s.size) as keyof typeof priceRange];
-          return (
+        {availableSizes.map((s) => (
             <a
               href={`/dumpster-rental/${slug}/${s.slug}/`}
               class={`group block bg-white border-2 rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-200 ${s.popular ? 'border-red' : 'border-gray-200 hover:border-red'}`}
@@ -304,7 +277,6 @@ const breadcrumbSchema = {
               )}
               <div class="flex items-center justify-between mb-2">
                 <h3 class="text-lg font-bold text-navy">{s.name}</h3>
-                {sizePrice && <span class="text-red font-bold">{sizePrice}</span>}
               </div>
               <p class="text-sm text-gray-500 mb-1">{s.dimensions}</p>
               <p class="text-sm text-gray-500 mb-3">{s.holds}</p>
@@ -325,8 +297,7 @@ const breadcrumbSchema = {
                 </svg>
               </div>
             </a>
-          );
-        })}
+        ))}
       </div>
     </div>
   </section>
@@ -354,9 +325,6 @@ const breadcrumbSchema = {
         Ready to Book Your {size}-Yard Dumpster in {city}?
       </h2>
       <p class="text-white/80 mb-6 text-lg">Same-day delivery available. Flat-rate pricing. No hidden fees.</p>
-      {cityPrice && (
-        <p class="text-white/70 text-base mb-6">{size} yard from {cityPrice} in {city}, {stateAbbr}.</p>
-      )}
       <a
         href={phoneHref}
         class="inline-flex items-center gap-3 bg-red text-white font-bold px-8 py-4 rounded-xl text-xl shadow-lg hover:bg-red/90 transition-colors"
