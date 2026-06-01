@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const steps = [
+  {
+    step: 1,
+    title: "Call or Request a Quote",
+    description: "Give us a call at (224) 725-3311 or fill out our quick quote form. Tell us your project type, location, and preferred delivery date. We'll recommend the right size and give you a flat-rate price — no surprises.",
+    icon: "📞",
+  },
+  {
+    step: 2,
+    title: "We Deliver to Your Door",
+    description: "Our driver arrives at your scheduled time and places the dumpster exactly where you need it — driveway, alley, or job site. Same-day delivery is available in most areas. No need to be home.",
+    icon: "🚛",
+  },
+  {
+    step: 3,
+    title: "Fill It Up & We Haul It Away",
+    description: "Load up your debris at your own pace — you keep the dumpster for your agreed rental period. When you're done, just give us a call and we'll pick it up and handle proper disposal for you.",
+    icon: "♻️",
+  },
+];
+---
+
+<BaseLayout
+  title="How Dumpster Rental Works | Windy City Dumpsters"
+  description="Renting a dumpster is easy with Windy City Dumpsters. 3 simple steps: call for a quote, we deliver, you fill it up and we haul it away."
+  canonicalURL="https://windycitydumpsters.com/how-it-works"
+>
+
+  <!-- Page Hero -->
+  <section class="bg-navy text-white py-14 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">How It Works</h1>
+      <p class="text-white/80 text-lg">
+        Renting a dumpster should be simple. Here's how we make it effortless from start to finish.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3-Step Process -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex flex-col gap-12">
+        {steps.map((step, index) => (
+          <div class={`flex flex-col sm:flex-row gap-8 items-start ${index % 2 === 1 ? 'sm:flex-row-reverse' : ''}`}>
+            <!-- Icon & Number -->
+            <div class="flex-shrink-0 flex flex-col items-center">
+              <div class="w-20 h-20 rounded-full bg-navy flex items-center justify-center text-4xl shadow-lg">
+                {step.icon}
+              </div>
+              <div class="mt-2 bg-red text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
+                {step.step}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 bg-white rounded-2xl border border-gray-200 p-8 shadow-sm">
+              <h2 class="text-xl sm:text-2xl font-extrabold text-navy mb-3">
+                Step {step.step}: {step.title}
+              </h2>
+              <p class="text-gray-600 leading-relaxed">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Teaser -->
+  <section class="bg-gray-50 border-t border-gray-200 py-16 px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl font-extrabold text-navy mb-4">It Really Is That Easy</h2>
+      <p class="text-gray-600 mb-8">No hidden fees. No complicated contracts. Just fast, reliable dumpster service in Chicago and the suburbs.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:+12247253311"
+          class="inline-flex items-center justify-center gap-2 bg-red text-white font-bold px-8 py-4 rounded-xl hover:bg-red/90 transition-colors text-lg"
+        >
+          Call (224) 725-3311
+        </a>
+        <a
+          href="/dumpster-sizes"
+          class="inline-flex items-center justify-center gap-2 bg-navy text-white font-bold px-8 py-4 rounded-xl hover:bg-navy/90 transition-colors text-lg"
+        >
+          View Sizes
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

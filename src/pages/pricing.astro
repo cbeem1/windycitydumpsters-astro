@@ -1,0 +1,151 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tiers = [
+  {
+    size: "10 Yard",
+    range: "$250 – $350",
+    period: "7-day rental",
+    bestFor: "Garage cleanouts, small remodels",
+    notes: "Pricing includes standard debris. Weight overages billed separately.",
+    icon: "📦",
+  },
+  {
+    size: "20 Yard",
+    range: "$350 – $475",
+    period: "7-day rental",
+    bestFor: "Kitchen/bath remodels, roofing",
+    notes: "Our most popular size. Most projects fall within this range.",
+    icon: "🗃️",
+    popular: true,
+  },
+  {
+    size: "30 Yard",
+    range: "$450 – $600",
+    period: "7-day rental",
+    bestFor: "Major renovations, construction",
+    notes: "Best value for large commercial or whole-home projects.",
+    icon: "🏗️",
+  },
+];
+
+const faqs = [
+  {
+    q: "What's included in the price?",
+    a: "The quoted price covers delivery, pickup, and standard disposal fees for the agreed rental period. We don't charge fuel surcharges or hidden admin fees.",
+  },
+  {
+    q: "Are there extra charges for heavy materials?",
+    a: "Concrete, dirt, brick, and asphalt are considered heavy materials and may have different pricing. Just let us know what you're disposing of when you call.",
+  },
+  {
+    q: "What if I need the dumpster longer than 7 days?",
+    a: "Extended rental periods are available at a daily rate. Let us know upfront and we'll include it in your quote.",
+  },
+  {
+    q: "Do I need a permit?",
+    a: "If you're placing the dumpster on a public street or alley in Chicago, a city permit may be required. We can advise you on this when you call — it's an easy process.",
+  },
+];
+---
+
+<BaseLayout
+  title="Dumpster Rental Pricing Chicago | Honest Flat-Rate Quotes | Windy City Dumpsters"
+  description="Transparent dumpster rental pricing in Chicago with no hidden fees. 10, 20, and 30 yard dumpsters starting from $250. Call (224) 725-3311 for your free quote."
+  canonicalURL="https://windycitydumpsters.com/pricing"
+>
+
+  <!-- Page Hero -->
+  <section class="bg-navy text-white py-14 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Dumpster Rental Pricing</h1>
+      <p class="text-white/80 text-lg">
+        Flat-rate pricing with no surprise fees. The price we quote is the price you pay.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing Cards -->
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {tiers.map((tier) => (
+        <div class={`relative rounded-2xl border-2 p-8 shadow-sm ${tier.popular ? 'border-red bg-red/5' : 'border-gray-200 bg-white'}`}>
+          {tier.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-red text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">Best Value</span>
+            </div>
+          )}
+          <div class="text-5xl text-center mb-4">{tier.icon}</div>
+          <h2 class="text-xl font-extrabold text-navy text-center mb-1">{tier.size}</h2>
+          <div class="text-center mb-4">
+            <span class="text-3xl font-extrabold text-red">{tier.range}</span>
+            <p class="text-xs text-gray-500 mt-1">{tier.period}</p>
+          </div>
+          <p class="text-sm text-gray-600 text-center mb-4 font-medium">{tier.bestFor}</p>
+          <p class="text-xs text-gray-500 text-center mb-8">{tier.notes}</p>
+          <a
+            href="tel:+12247253311"
+            class={`block text-center font-bold py-3 px-6 rounded-xl transition-colors ${tier.popular ? 'bg-red text-white hover:bg-red/90' : 'bg-navy text-white hover:bg-navy/90'}`}
+          >
+            Get Exact Quote
+          </a>
+        </div>
+      ))}
+    </div>
+    <p class="text-center text-sm text-gray-500 mt-8">
+      * Prices are estimates for the Chicago metro area. Exact quotes depend on location, debris type, and rental duration.
+    </p>
+  </section>
+
+  <!-- What's Included -->
+  <section class="bg-gray-50 border-y border-gray-200 py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-navy text-center mb-10">What's Always Included</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {[
+          "Flat-rate quote — no hidden charges",
+          "Delivery and pickup",
+          "Standard 7-day rental period",
+          "Proper, licensed disposal",
+          "Same-day delivery when available",
+          "Friendly, professional service",
+        ].map((item) => (
+          <div class="flex items-center gap-3 bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
+            <span class="text-red font-bold text-lg">✓</span>
+            <span class="text-gray-700">{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-navy text-center mb-10">Pricing FAQs</h2>
+      <div class="space-y-6">
+        {faqs.map((faq) => (
+          <div class="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
+            <h3 class="font-bold text-navy mb-2">{faq.q}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-red py-14 px-4 text-white text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-extrabold mb-3">Get Your Free Quote Now</h2>
+      <p class="text-white/90 mb-8">Call us and we'll give you a firm price in under 2 minutes.</p>
+      <a
+        href="tel:+12247253311"
+        class="inline-flex items-center justify-center gap-2 bg-white text-red font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+      >
+        (224) 725-3311
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

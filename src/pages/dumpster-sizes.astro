@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const sizes = [
+  {
+    yards: 10,
+    dimensions: "12’ L \xd7 8’ W \xd7 4’ H",
+    bestFor: ["Garage cleanouts", "Small bathroom remodels", "Yard debris removal", "Single-room renovations"],
+    loadLimit: "2–3 tons",
+    icon: "📦",
+  },
+  {
+    yards: 20,
+    dimensions: "22’ L \xd7 8’ W \xd7 4.5’ H",
+    bestFor: ["Kitchen remodels", "Roofing projects", "Multi-room cleanouts", "Deck removal"],
+    loadLimit: "4–5 tons",
+    icon: "🗃️",
+    popular: true,
+  },
+  {
+    yards: 30,
+    dimensions: "22’ L \xd7 8’ W \xd7 6’ H",
+    bestFor: ["Major renovations", "New construction", "Large estate cleanouts", "Commercial projects"],
+    loadLimit: "6–8 tons",
+    icon: "🏗️",
+  },
+];
+---
+
+<BaseLayout
+  title="Dumpster Size Guide | 10, 20 & 30 Yard Rentals | Windy City Dumpsters"
+  description="Not sure which dumpster size to rent? Our size guide helps you pick the right 10, 20, or 30 yard dumpster for your project in Chicago."
+  canonicalURL="https://windycitydumpsters.com/dumpster-sizes"
+>
+
+  <!-- Page Hero -->
+  <section class="bg-navy text-white py-14 px-4 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-4">Dumpster Size Guide</h1>
+      <p class="text-white/80 text-lg">
+        Not sure which size to rent? We'll help you choose the right dumpster for your project — and you can always call us for personalized advice.
+      </p>
+    </div>
+  </section>
+
+  <!-- Size Cards -->
+  <section class="py-16 px-4">
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      {sizes.map((size) => (
+        <div class={`relative rounded-2xl border-2 p-8 shadow-sm ${size.popular ? 'border-red bg-red/5' : 'border-gray-200 bg-white'}`}>
+          {size.popular && (
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-red text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wide">Most Popular</span>
+            </div>
+          )}
+          <div class="text-5xl text-center mb-4">{size.icon}</div>
+          <h2 class="text-2xl font-extrabold text-navy text-center mb-1">{size.yards} Yard</h2>
+          <p class="text-gray-500 text-sm text-center mb-4">{size.dimensions}</p>
+          <div class="bg-gray-50 rounded-lg px-4 py-2 text-center mb-6">
+            <span class="text-xs text-gray-500 uppercase tracking-wide">Weight Limit</span>
+            <p class="font-bold text-navy">{size.loadLimit}</p>
+          </div>
+          <h3 class="font-bold text-navy text-sm uppercase tracking-wide mb-3">Best For:</h3>
+          <ul class="space-y-2 mb-8">
+            {size.bestFor.map((item) => (
+              <li class="flex items-start gap-2 text-gray-700 text-sm">
+                <span class="text-red font-bold mt-0.5">✓</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="tel:+12247253311"
+            class={`block text-center font-bold py-3 px-6 rounded-xl transition-colors ${size.popular ? 'bg-red text-white hover:bg-red/90' : 'bg-navy text-white hover:bg-navy/90'}`}
+          >
+            Book {size.yards} Yard
+          </a>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Help CTA -->
+  <section class="bg-gray-50 border-t border-gray-200 py-14 px-4 text-center">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-navy mb-3">Still Not Sure?</h2>
+      <p class="text-gray-600 mb-6">Our team is happy to help you pick the right size. Give us a call — it's free and takes less than 2 minutes.</p>
+      <a
+        href="tel:+12247253311"
+        class="inline-flex items-center gap-2 bg-red text-white font-bold px-8 py-4 rounded-xl hover:bg-red/90 transition-colors text-lg"
+      >
+        Call (224) 725-3311
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

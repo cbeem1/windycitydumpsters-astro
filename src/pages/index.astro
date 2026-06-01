@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Dumpster Rental Chicago | Same-Day Delivery | Windy City Dumpsters"
+  description="Affordable dumpster rentals in Chicago and 40+ suburbs. Same-day delivery available. Call (224) 725-3311 for a free quote — no hidden fees, 7 days a week."
+  canonicalURL="https://windycitydumpsters.com/"
+>
+
+  <!-- Hero Section -->
+  <section class="bg-navy text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        Dumpster Rental Chicago<br />
+        <span class="text-red">Same-Day Delivery</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+        Fast, affordable dumpster rentals for homeowners and contractors. We serve Chicago and 40+ suburbs — no hidden fees, no hassle.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:+12247253311"
+          class="inline-flex items-center justify-center gap-2 bg-red text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-red/90 transition-colors shadow-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+          </svg>
+          Call (224) 725-3311
+        </a>
+        <a
+          href="/pricing"
+          class="inline-flex items-center justify-center gap-2 bg-white text-navy font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          Get a Free Quote
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="bg-white border-b border-gray-200 py-6 px-4">
+    <div class="max-w-5xl mx-auto">
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">⚡</span>
+          <span class="font-bold text-navy text-sm sm:text-base">Same-Day Delivery</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">💰</span>
+          <span class="font-bold text-navy text-sm sm:text-base">No Hidden Fees</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">📅</span>
+          <span class="font-bold text-navy text-sm sm:text-base">7 Days a Week</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">🆓</span>
+          <span class="font-bold text-navy text-sm sm:text-base">Free Quotes</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-navy mb-4">
+        Chicago's Most Trusted Dumpster Rental
+      </h2>
+      <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+        Whether you're cleaning out a garage, renovating a kitchen, or managing a construction site — we've got the right size dumpster at the right price.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">🚛</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Fast Delivery</h3>
+          <p class="text-gray-600 text-sm">Same-day and next-day delivery available throughout Chicagoland. We show up on time, every time.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">📋</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Transparent Pricing</h3>
+          <p class="text-gray-600 text-sm">Flat-rate pricing with no surprise charges. The price we quote is the price you pay.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">🌍</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Wide Service Area</h3>
+          <p class="text-gray-600 text-sm">We serve Chicago and 40+ suburbs across Cook, DuPage, Lake, and Will counties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="bg-red py-14 px-4 text-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">Ready to Get Started?</h2>
+      <p class="text-white/90 mb-8 text-lg">Call now for a free quote — we'll have a dumpster at your location as soon as today.</p>
+      <a
+        href="tel:+12247253311"
+        class="inline-flex items-center justify-center gap-2 bg-white text-red font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+      >
+        (224) 725-3311
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

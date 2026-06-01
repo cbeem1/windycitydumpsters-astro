@@ -1,0 +1,156 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalURL?: string;
+}
+
+const { title, description, canonicalURL } = Astro.props;
+const phone = '(224) 725-3311';
+const phoneHref = 'tel:+12247253311';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    {canonicalURL && <link rel="canonical" href={canonicalURL} />}
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-gray-900 font-sans">
+
+    <!-- Sticky Navigation -->
+    <header class="sticky top-0 z-50 bg-navy shadow-md">
+      <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+
+        <!-- Logo -->
+        <a href="/" aria-label="Windy City Dumpsters Home">
+          <img
+            src="/img/logo.svg"
+            alt="Windy City Dumpsters"
+            class="h-12 w-auto"
+          />
+        </a>
+
+        <!-- Desktop Nav Links -->
+        <ul class="hidden md:flex items-center gap-6 text-white font-medium">
+          <li><a href="/" class="hover:text-red transition-colors">Home</a></li>
+          <li><a href="/dumpster-sizes" class="hover:text-red transition-colors">Sizes</a></li>
+          <li><a href="/how-it-works" class="hover:text-red transition-colors">How It Works</a></li>
+          <li><a href="/pricing" class="hover:text-red transition-colors">Pricing</a></li>
+        </ul>
+
+        <!-- CTA: Click-to-call -->
+        <div class="flex items-center gap-3">
+          <a
+            href={phoneHref}
+            class="hidden sm:inline-flex items-center gap-2 bg-red text-white font-bold px-4 py-2 rounded-lg hover:bg-red/90 transition-colors text-sm"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+            </svg>
+            {phone}
+          </a>
+
+          <!-- Hamburger (mobile) -->
+          <button
+            id="nav-toggle"
+            class="md:hidden text-white p-2 rounded focus:outline-none"
+            aria-label="Open menu"
+            aria-expanded="false"
+          >
+            <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/20">
+        <ul class="flex flex-col px-4 py-4 gap-4 text-white font-medium">
+          <li><a href="/" class="block hover:text-red transition-colors">Home</a></li>
+          <li><a href="/dumpster-sizes" class="block hover:text-red transition-colors">Sizes</a></li>
+          <li><a href="/how-it-works" class="block hover:text-red transition-colors">How It Works</a></li>
+          <li><a href="/pricing" class="block hover:text-red transition-colors">Pricing</a></li>
+          <li>
+            <a
+              href={phoneHref}
+              class="inline-flex items-center gap-2 bg-red text-white font-bold px-4 py-2 rounded-lg hover:bg-red/90 transition-colors text-sm"
+            >
+              {phone}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-white mt-16">
+      <div class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div>
+          <img src="/img/logo.svg" alt="Windy City Dumpsters" class="h-10 w-auto mb-3" />
+          <p class="text-white/80 text-sm">Serving Chicago & 40+ Suburbs</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-3">Quick Links</h3>
+          <ul class="space-y-2 text-white/80 text-sm">
+            <li><a href="/dumpster-sizes" class="hover:text-red transition-colors">Dumpster Sizes</a></li>
+            <li><a href="/how-it-works" class="hover:text-red transition-colors">How It Works</a></li>
+            <li><a href="/pricing" class="hover:text-red transition-colors">Pricing</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-3">Contact Us</h3>
+          <a
+            href={phoneHref}
+            class="text-red font-bold text-xl hover:text-red/80 transition-colors"
+          >
+            {phone}
+          </a>
+          <p class="text-white/80 text-sm mt-2">Available 7 days a week</p>
+        </div>
+      </div>
+
+      <div class="border-t border-white/20">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-white/60 text-sm">
+          <span>&copy; {new Date().getFullYear()} Windy City Dumpsters. All rights reserved.</span>
+          <span>Serving Chicago &amp; 40+ Suburbs</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Nav Toggle Script -->
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const hamburger = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      toggle?.addEventListener('click', () => {
+        const isOpen = !menu?.classList.contains('hidden');
+        menu?.classList.toggle('hidden', isOpen);
+        hamburger?.classList.toggle('hidden', !isOpen);
+        closeIcon?.classList.toggle('hidden', isOpen);
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    </script>
+  </body>
+</html>
