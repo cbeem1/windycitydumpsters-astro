@@ -200,7 +200,7 @@ const breadcrumbSchema = {
         </div>
 
         <!-- Right: Tally Form -->
-        <div class="bg-white rounded-xl overflow-hidden shadow-xl">
+        <div id="quote-form" class="bg-white rounded-xl overflow-hidden shadow-xl">
           <div class="bg-red px-4 py-3">
             <p class="text-white font-bold text-center">Get a Free Quote — Takes 60 Seconds</p>
           </div>
@@ -225,7 +225,7 @@ const breadcrumbSchema = {
       </h2>
       <p class="text-center text-gray-600 mb-8">Click a size to see full specs, best uses, and weight limits.</p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {availableSizes.map((size) => (
             <a
               href={`/dumpster-rental/${slug}/${size.slug}/`}
@@ -237,22 +237,10 @@ const breadcrumbSchema = {
                 </span>
               )}
 
-              <div class="flex items-center justify-between mb-3">
-                <h3 class="text-xl font-bold text-navy">{size.name}</h3>
-              </div>
+              <h3 class="text-xl font-bold text-navy mb-3">{size.name}</h3>
 
               <p class="text-sm text-gray-500 mb-1">{size.dimensions}</p>
-              <p class="text-sm text-gray-500 mb-3">{size.holds}</p>
-
-              <div class="mb-4">
-                <a
-                  href={tallyFormUrl}
-                  class="inline-block text-sm font-semibold text-red hover:underline"
-                  onclick="event.stopPropagation()"
-                >
-                  Get a Free Quote →
-                </a>
-              </div>
+              <p class="text-sm text-gray-500 mb-4">{size.holds}</p>
 
               <ul class="space-y-1 mb-4">
                 {size.bestFor.slice(0, 3).map((use) => (
