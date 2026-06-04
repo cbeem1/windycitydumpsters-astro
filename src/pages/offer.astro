@@ -1,0 +1,145 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Your Exclusive Dumpster Rental Offer | Windy City Dumpsters"
+  description="A personalized dumpster rental offer from Windy City Dumpsters — same-day delivery, transparent pricing, no hidden fees."
+>
+
+  <!-- Hero Section -->
+  <section class="bg-navy text-white py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-red font-bold uppercase tracking-widest text-sm mb-4">Special Offer for You</p>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+        Hi <span data-fill="first_name">there</span>,<br />
+        Your Dumpster Is Ready
+      </h1>
+      <p class="text-lg sm:text-xl text-white/80 mb-4 max-w-2xl mx-auto">
+        We're holding a <strong data-fill="recommended_size">dumpster</strong> for your project at
+        <strong data-fill="address">your address</strong>.
+        Same-day delivery available — no hidden fees, no hassle.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a
+          href="tel:+12247253311"
+          class="inline-flex items-center justify-center gap-2 bg-red text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-red/90 transition-colors shadow-lg"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.58a1 1 0 01-.24 1.01l-2.21 2.2z"/>
+          </svg>
+          Call (224) 725-3311
+        </a>
+        <a
+          href="/pricing"
+          class="inline-flex items-center justify-center gap-2 bg-white text-navy font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          See Pricing & Book Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="bg-white border-b border-gray-200 py-6 px-4">
+    <div class="max-w-5xl mx-auto">
+      <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">⚡</span>
+          <span class="font-bold text-navy text-sm sm:text-base">Same-Day Delivery</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">💰</span>
+          <span class="font-bold text-navy text-sm sm:text-base">No Hidden Fees</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">📅</span>
+          <span class="font-bold text-navy text-sm sm:text-base">7 Days a Week</span>
+        </li>
+        <li class="flex flex-col items-center gap-2 py-4">
+          <span class="text-3xl">🆓</span>
+          <span class="font-bold text-navy text-sm sm:text-base">Free Quotes</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Offer Details -->
+  <section class="py-16 px-4 bg-gray-50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-navy mb-4">
+        What's Included
+      </h2>
+      <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+        Your offer includes delivery, pickup, and disposal — all in one flat rate.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">🚛</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Free Delivery</h3>
+          <p class="text-gray-600 text-sm">We drop the dumpster where you need it and pick it up when you're done.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">📦</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Right-Sized Container</h3>
+          <p class="text-gray-600 text-sm">We've matched a <span data-fill="recommended_size">dumpster</span> to your project based on what we know about your area.</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+          <div class="text-4xl mb-3">📋</div>
+          <h3 class="font-bold text-navy text-lg mb-2">Flat-Rate Pricing</h3>
+          <p class="text-gray-600 text-sm">The price you see is the price you pay. No surprise charges at pickup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Band -->
+  <section class="bg-red py-14 px-4 text-white text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl sm:text-3xl font-extrabold mb-4">Ready to Book?</h2>
+      <p class="text-white/90 mb-8 text-lg">
+        Call now or view pricing online — we can have a dumpster at
+        <span data-fill="address">your location</span> as soon as today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="tel:+12247253311"
+          class="inline-flex items-center justify-center gap-2 bg-white text-red font-bold text-xl px-10 py-4 rounded-xl hover:bg-gray-100 transition-colors shadow-lg"
+        >
+          (224) 725-3311
+        </a>
+        <a
+          href="/pricing"
+          class="inline-flex items-center justify-center gap-2 border-2 border-white text-white font-bold text-xl px-10 py-4 rounded-xl hover:bg-white/10 transition-colors"
+        >
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<script>
+  const params = new URLSearchParams(location.search);
+  const token = params.get("t");
+  const LOOKUP_URL = "https://omfbzjanccfnfjpnqaxg.supabase.co/functions/v1/lead-by-token";
+
+  function fill(key: string, val: string) {
+    document.querySelectorAll(`[data-fill="${key}"]`).forEach((el) => {
+      el.textContent = val;
+    });
+  }
+
+  if (token) {
+    fetch(`${LOOKUP_URL}?t=${encodeURIComponent(token)}`)
+      .then((r) => r.json())
+      .then((d) => {
+        if (!d || d.found === false) return; // leave generic copy
+        if (d.first_name) fill("first_name", d.first_name);
+        if (d.address) fill("address", d.address);
+        if (d.recommended_size) fill("recommended_size", d.recommended_size);
+      })
+      .catch(() => { /* leave generic copy on any error */ });
+  }
+</script>
